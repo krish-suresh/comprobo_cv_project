@@ -7,8 +7,8 @@ intrinsic_left = np.load("int_l.npy")
 intrinsic_right = np.load("int_r.npy") 
 
 if RECTIFIED:
-    right = cv2.imread("rect_right.png")
-    left = cv2.imread("rect_left.png")
+    right = cv2.imread("images/out/right.png")
+    left = cv2.imread("images/out/left.png")
 else: 
     right = cv2.imread("right.png")
     left = cv2.imread("left.png")
