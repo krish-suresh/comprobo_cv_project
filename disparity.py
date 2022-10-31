@@ -11,8 +11,10 @@ intrinsic_right = np.load("int_r.npy")
 
 ## Read saved image stills
 if RECTIFIED:
-    right = cv2.imread(f"images/{folder}/rect_right.png")
-    left = cv2.imread(f"images/{folder}/rect_left.png")
+    # right = cv2.imread(f"images/{folder}/rect_right.png")
+    # left = cv2.imread(f"images/{folder}/rect_left.png")
+    right = cv2.imread(f"rect_r.png")
+    left = cv2.imread(f"rect_l.png")
 else: 
     right = cv2.imread("right.png")
     left = cv2.imread("left.png")
@@ -47,7 +49,8 @@ for y in range(k_h, h-k_h):
                 best_ssd = ssd
         disparity_map[y,x] = (255/max_offset)*(x-best_offset) # Save disparity as a distance proportional to left image
     print(f"row: {y}/{h-k_h}")
-cv2.imwrite(f"images/{folder}/disp.png", disparity_map)
+# cv2.imwrite(f"images/{folder}/disp.png", disparity_map)
+cv2.imwrite(f"disp.png", disparity_map)
 cv2.imshow("stereo", np.concatenate((left, right), axis=1))
 cv2.imshow("disp",disparity_map)
 cv2.waitKey()
