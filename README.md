@@ -26,7 +26,8 @@ The disparity is the difference between the same scene point in the left and rig
 $$Disparity=u_L-u_R$$
 Because the disparity only exists in the horizontal direction, the corresponding points must lie on the same line in both images. This method works best with textured surfaces since repeated patterns will result in too many matches between the left and right images. In order to make calculating the disparity as simple as possible, the two cameras must be calibrated so that they are parallel to each other so the scene is at infinity. The disparity is proportional to the baseline, so the larger the baseline, the more precisely the disparity can be calculated. This makes it much easier to calculate the correspondences between the left and right images since the distance between the two cameras becomes negligible. Epipolar geometry can be used to achieve this. 
 
-![](res/3.jpg)
+<img src="res/3.jpg" alt="drawing" width="400"/>
+
 Through epipolar geometry, the goal is to find the fundamental matrix, which encompasses the rotation and translation of the cameras with respect to one another. 
 The essential matrix contains the rotation and translation of the cameras with respect to one another:
 ![](res/5.png)
